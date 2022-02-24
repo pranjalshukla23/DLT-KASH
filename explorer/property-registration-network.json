@@ -1,0 +1,59 @@
+{
+	"name": "property-registration-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": false,
+		"organization": "usersMSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"registrationchannel": {
+			"peers": {
+				"peer0.users.property-registration-network.com": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"usersMSP": {
+			"mspid": "usersMSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/users.property-registration-network.com/users/Admin@users.property-registration-network.com/msp/keystore/0c6d6de200ab3f604c63ad7aaee6f91daa342ed12d101ecc782f8177d22b2198_sk"
+			},
+			"peers": [
+				"peer0.users.property-registration-network.com"
+			],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/users.property-registration-network.com/users/Admin@users.property-registration-network.com/msp/signcerts/Admin@users.property-registration-network.com-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.users.property-registration-network.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/users.property-registration-network.com/peers/peer0.users.property-registration-network.com/tls/ca.crt"
+			},
+			"url": "grpc://peer0.users.property-registration-network.com:9051"
+		}
+	}
+}

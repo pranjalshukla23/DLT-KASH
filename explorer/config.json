@@ -1,0 +1,9 @@
+{
+	"network-configs": {
+		"property-registration-network": {
+			"name": "property-registration-network",
+			"profile": "./property-registration-network.json"
+		}
+	},
+	"license": "Apache-2.0"
+}
